@@ -1,3 +1,10 @@
+/* *
+ * @author Stefano C. Coronado (scoronado)
+ * @since 2019-03-20
+ * Linked_list.cpp */
+
+
+
 #ifndef LIST_CPP
 #define LIST_CPP
 #include "linked_list.h"
