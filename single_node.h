@@ -1,6 +1,11 @@
 #ifndef NODE
 #define NODE
 
+/**
+ * @author Stefano C. Coronado (scoronado)
+ * @since 2019-03-20
+ * Single_node.h
+ */
 
 template <class NODETYPE> class linked_list;
 
