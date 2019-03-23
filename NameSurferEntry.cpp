@@ -35,11 +35,13 @@ NameSurferEntry::NameSurferEntry(string line){
     }
     LineIn.clear();
     this-> name = lineVals[0]; //NOTICE This declares the string in the object
-    int j = 0;
+//     int j = 0;
     for (int i = 1; i <= 13; i++){
         //TODO Add to rank vector
-        rank.at(j) = stoi(lineVals[i]); //NOTICE this places the ranks in order
-        j++;
+         //rank.at(j) = stoi(lineVals[i]); //NOTICE this places the ranks in order WARNING Line causes out_of_range_error
+        
+        rank = rank (begin(lineVals)+ 1, end(lineVals)); //TODO insert array into vector
+        
     }
     
     

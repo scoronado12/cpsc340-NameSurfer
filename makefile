@@ -1,5 +1,5 @@
 a.out: main.cpp single_node.o linked_list.o NameSurferEntry.o NameSurferDataBase.o 
-	g++ main.cpp single_node.o linked_list.o NameSurferDataBase.o NameSurferEntry.o
+	g++ -g main.cpp single_node.o linked_list.o NameSurferDataBase.o NameSurferEntry.o
 NameSurferEntry.o: NameSurferEntry.cpp
 	g++ -c NameSurferEntry.cpp
 NameSurferDataBase.o: NameSurferDataBase.cpp
