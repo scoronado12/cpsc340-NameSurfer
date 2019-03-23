@@ -20,8 +20,11 @@ int main(){
         while (!inputfile.eof()){
             getline(inputfile, line);
             //TODO stick it into the vector
+            
             cout << line << endl;
         }
+        
+        inputfile.close();
     }
     
     return 0;
