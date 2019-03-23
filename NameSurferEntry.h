@@ -34,8 +34,8 @@ public:
     bool empty();
 
 private:
-    vector<int>    rank;
-    string        name;
+    vector<int> rank;
+    string name;
 
 };
 

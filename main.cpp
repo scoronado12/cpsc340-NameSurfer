@@ -1,6 +1,8 @@
 #include <fstream>
 #include <iostream>
 #include "linked_list.h"
+#include "NameSurferDataBase.h"
+#include "NameSurferEntry.h"
 
 using namespace std;
 
