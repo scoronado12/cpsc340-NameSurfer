@@ -2,7 +2,7 @@
 /**
  * @author scoronado
  * @since 2019-03-20
- * NameSurferEntry.h
+ * NameSurferEntry.cpp
  */
 
 #ifndef NAME_SURFER_ENTRY_CPP
@@ -91,10 +91,13 @@ int NameSurferEntry::getRank(int year){
 
 //Overloading Operators to compare two different NameSurferEntries
 bool operator >= (NameSurferEntry left, NameSurferEntry right){
-    
-    
-    
+    return left.getName() >= right.getName();
 }
+
+bool operator < (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() < right.getName();
+}
+
 
 
 

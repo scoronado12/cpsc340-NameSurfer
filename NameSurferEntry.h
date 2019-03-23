@@ -19,12 +19,12 @@ class NameSurferEntry {
     friend ostream & operator<<(ostream &out, NameSurferEntry temp);
 
 public:
-    bool operator< (NameSurferEntry left, NameSurferEntry right);
-    bool operator> (NameSurferEntry left, NameSurferEntry right);
-    bool operator<= (NameSurferEntry left, NameSurferEntry right);
-    bool operator>= (NameSurferEntry left, NameSurferEntry right);
-    bool operator!= (NameSurferEntry left, NameSurferEntry right);
-    bool operator== (NameSurferEntry left, NameSurferEntry right);
+    friend bool operator< (NameSurferEntry left, NameSurferEntry right);
+    bool operator> (NameSurferEntry left);
+    bool operator<= (NameSurferEntry left);
+    friend bool operator>= (NameSurferEntry left, NameSurferEntry right);
+    bool operator!= (NameSurferEntry left);
+    bool operator== (NameSurferEntry left);
     
     NameSurferEntry();
     NameSurferEntry(string line);
