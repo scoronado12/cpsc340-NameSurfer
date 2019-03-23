@@ -171,7 +171,7 @@ bool linked_list<NODETYPE>::IsEmpty() const {
 }
 
 template <class NODETYPE>
-bool linked_list<NODETYPE>::Search(NODETYPE value) {
+bool linked_list<NODETYPE>::Search(NODETYPE &value) {
     
     if (IsEmpty()){
         //if the list is empty return false

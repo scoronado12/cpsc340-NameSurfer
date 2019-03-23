@@ -6,8 +6,11 @@
 
 #ifndef NAMESURFER_DATABASE_H
 #define NAMESURFER_DATABASE_H
+#include <fstream>
+#include <iostream>
 #include <string>
 #include "linked_list.h"
+#include "NameSurferDataBase.h"
 #include "NameSurferEntry.h"
 
 using namespace std;
