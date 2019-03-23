@@ -10,7 +10,9 @@
 #include <string>
 #include <iostream>
 #include <ostream>
+#include <string>
 #include <vector>
+#include <sstream>
 #include "NameSurferEntry.h"
 
 
@@ -18,11 +20,28 @@ using namespace std;
 
 NameSurferEntry::NameSurferEntry(){
     name = "Default";
-    //rank = rank (12, 0);
+    //vector should be all zeros here
 }
 
-NameSurferEntry::NameSurferEntry(string name){
-    this -> name = name;
+NameSurferEntry::NameSurferEntry(string line){
+    //play with string
+    string lineVals[13];
+    
+    stringstream LineIn(line);
+    int i = 0;
+    while (LineIn.good() && i <= 13){
+        LineIn >> lineVals[i];
+        i++;
+    }
+    LineIn.clear();
+    this-> name = lineVals[0]; //NOTICE This declares the string in the object
+    int j = 0;
+    for (int i = 1; i <= 13; i++){
+        //TODO Add to rank vector
+        rank.at(j) = stoi(lineVals[i]); //NOTICE this places the ranks in order
+        j++;
+    }
+    
     
 }
 
@@ -68,6 +87,13 @@ int NameSurferEntry::getRank(int year){
     
     
 //     return rank;
+}
+
+//Overloading Operators to compare two different NameSurferEntries
+bool operator >= (NameSurferEntry left, NameSurferEntry right){
+    
+    
+    
 }
 
 

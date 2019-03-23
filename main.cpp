@@ -2,12 +2,11 @@
 #include <iostream>
 #include "linked_list.h"
 #include "NameSurferDataBase.h"
-#include "NameSurferEntry.h"
 
 using namespace std;
 
 int main(){
-    
+    /*
     ifstream inputfile;
     //open file
     inputfile.open("NamesData.txt");
@@ -27,7 +26,11 @@ int main(){
         }
         
         inputfile.close();
-    }
+    }*/
+    
+    
+    NameSurferDataBase("NamesData.txt");
+    
     
     return 0;
 }
