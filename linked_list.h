@@ -22,7 +22,7 @@ class linked_list{
 		bool Remove(NODETYPE & value);
         bool RemoveFront(NODETYPE & value);
         bool RemoveRear(NODETYPE & value);
-		bool Search(NODETYPE value);
+		bool Search(NODETYPE &value);
 		bool IsEmpty() const;
 		void PrintAll();
 	private:
