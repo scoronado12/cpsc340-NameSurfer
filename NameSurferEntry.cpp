@@ -42,6 +42,7 @@ NameSurferEntry::NameSurferEntry(string line){
         cout << "Inserting: "<< lineVals[0] << " " << lineVals[i] << endl;
         rank.push_back(stoi(lineVals[i])); //TODO insert array into vector
         
+        
     }
     cout << "New Entry" << endl;
     
