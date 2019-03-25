@@ -50,10 +50,17 @@ NameSurferDataBase::NameSurferDataBase(string filename){
 
     
 }
-/* //TODO findEntry
+ //TODO findEntry
+ 
+ /**
+  * findEntry() - returns a NameSurferEntry from the linked_list database
+  */
 NameSurferEntry NameSurferDataBase::findEntry(string name){
-    return NULL;
-}*/
+    NameSurferEntry temp = NameSurferEntry(name);
+    database.Search(temp);
+    //TODO add if block that is able to detect whether or not the search was successful
+    return temp;
+}
 
 
 

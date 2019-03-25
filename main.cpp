@@ -59,14 +59,14 @@ int main(){
     return 0;
 }
 
-//TODO find way to interract with linked_list from main.cpp
+//TODO find way to interract with NameSurferDataBase from main.cpp
 
 
 /**
  * Option 1 - Search name
  */
 void searchName(string name){
-    
+    findEntry(name);
     
 }
 /**
