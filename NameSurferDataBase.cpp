@@ -30,11 +30,16 @@ NameSurferDataBase::NameSurferDataBase(string filename){
     } else {
         while (!inputfile.eof()){
             getline(inputfile, line);
+            if (inputfile.eof()){
+                inputfile.close();
+                break;
+            } else {
+                NameSurferEntry entry  = NameSurferEntry(line);
+                database.InsertInOrder(entry);
+//                 cout << "Print All";
+//                 database.PrintAll();
+            }
             
-            NameSurferEntry entry  = NameSurferEntry(line);
-            database.InsertInOrder(entry);
-            
-            //cout << line << endl;
         }
         
         inputfile.close();

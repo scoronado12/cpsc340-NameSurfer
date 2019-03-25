@@ -7,13 +7,9 @@ using namespace std;
 
 int main(){
     
-    
-    
     NameSurferDataBase("NamesData.txt");
     
-    
-    
-    
+    //Menu
     
     return 0;
 }
