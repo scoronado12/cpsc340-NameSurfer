@@ -99,6 +99,17 @@ bool operator < (NameSurferEntry left, NameSurferEntry right){
     return left.getName() < right.getName();
 }
 
+/**
+ * Overloading Out to be able to print Linked List
+ */
+ostream & operator << (ostream &out, NameSurferEntry temp){
+    
+    out << "Name: "<< temp.getName() << endl;
+    out << " Values: "<< temp.getRank(1900) << " " << temp.getRank(1910) << 
+    " " << temp.getRank(1920) << " " << temp.getRank(1930)   << endl;
+    
+    return out;
+}
 
 
 

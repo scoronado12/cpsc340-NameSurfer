@@ -15,6 +15,7 @@
 
 using namespace std;
 
+
 NameSurferDataBase::NameSurferDataBase(string filename){
     
     ifstream inputfile;
@@ -36,9 +37,9 @@ NameSurferDataBase::NameSurferDataBase(string filename){
             } else {
                 NameSurferEntry entry  = NameSurferEntry(line);
                 database.InsertInOrder(entry);
-                //TODO Find way to fix PrintAll
-//                 cout << "Print All";
-//                 database.PrintAll();
+                //TODO Find way to fix PrintAll TODO Overload ostream
+                 cout << "Print All";
+                 database.PrintAll();
             }
             
         }
