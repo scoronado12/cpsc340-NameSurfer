@@ -66,7 +66,7 @@ int main(){
  * Option 1 - Search name
  */
 void searchName(string name){
-    findEntry(name);
+//     findEntry(name);
     
 }
 /**

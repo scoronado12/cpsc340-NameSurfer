@@ -37,11 +37,9 @@ NameSurferEntry::NameSurferEntry(string line){
     LineIn.clear();
     this-> name = lineVals[0]; //NOTICE This declares the name in the object
 //     int j = 0;
-    for (int i = 1; i <= 10; i++){
+    for (int i = 1; i <= 12; i++){
          //cout << "Inserting: "<< lineVals[0] << " " << lineVals[i] << endl;
         rank.push_back(stoi(lineVals[i])); //TODO insert array into vector
-        
-        
     }
     
 }
@@ -106,7 +104,10 @@ ostream & operator << (ostream &out, NameSurferEntry temp){
     
     out << "Name: "<< temp.getName() << endl;
     out << " Values: "<< temp.getRank(1900) << " " << temp.getRank(1910) << 
-    " " << temp.getRank(1920) << " " << temp.getRank(1930)   << endl;
+    " " << temp.getRank(1920) << " ";
+    out << temp.getRank(1930) << " " << temp.getRank(1940) << " " << temp.getRank(1950) << " " <<  temp.getRank(1960);
+    out << " " << temp.getRank(1970) << " " << temp.getRank(1980) << " " << temp.getRank(1990) << " ";
+    out << temp.getRank(2000) << " " << temp.getRank(2010) << endl;
     
     return out;
 }
