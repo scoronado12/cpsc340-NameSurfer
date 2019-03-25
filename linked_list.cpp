@@ -206,11 +206,12 @@ void linked_list<NODETYPE>::PrintAll() {
         //use a while loop to check for not equal to nullptr
             //print out data
             //move current over
-    
-    current = first;
-    while (current != nullptr){
-        cout << current -> data << "\n";
-        current = current -> next;
+    if(!IsEmpty()){
+        current = first;
+        while (current != nullptr){
+            cout << current -> data << "\n";
+            current = current -> next;
+        }
     }
     
     
