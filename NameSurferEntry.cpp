@@ -100,7 +100,7 @@ bool operator < (NameSurferEntry left, NameSurferEntry right){
 }
 
 /**
- * Overloading Out to be able to print Linked List
+ * Overloading ostream out to be able to print Linked List
  */
 ostream & operator << (ostream &out, NameSurferEntry temp){
     

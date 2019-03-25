@@ -38,11 +38,11 @@ NameSurferDataBase::NameSurferDataBase(string filename){
                 NameSurferEntry entry  = NameSurferEntry(line);
                 database.InsertInOrder(entry);
                 //TODO Find way to fix PrintAll TODO Overload ostream
-                 cout << "Print All";
-                 database.PrintAll();
             }
             
         }
+        cout << "Print All";
+        database.PrintAll();
         
         inputfile.close();
     }
