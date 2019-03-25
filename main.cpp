@@ -59,6 +59,8 @@ int main(){
     return 0;
 }
 
+//TODO find way to interract with linked_list from main.cpp
+
 
 /**
  * Option 1 - Search name
