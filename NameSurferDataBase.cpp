@@ -36,6 +36,7 @@ NameSurferDataBase::NameSurferDataBase(string filename){
             } else {
                 NameSurferEntry entry  = NameSurferEntry(line);
                 database.InsertInOrder(entry);
+                //TODO Find way to fix PrintAll
 //                 cout << "Print All";
 //                 database.PrintAll();
             }
