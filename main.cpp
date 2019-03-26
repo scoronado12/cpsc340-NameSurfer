@@ -6,22 +6,23 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <strings.h>
 #include "linked_list.h"
 #include "NameSurferDataBase.h"
 
 using namespace std;
 
-// friend class NameSurferDataBase;
 
-void searchName(string name);
-void enterYear(int year);
+void searchName(string name, NameSurferDataBase &database);
+void enterYear(int year, NameSurferDataBase &database);
 
 int main(){
     int selection = 0;
     int year = 0;
     string name = "";
-    NameSurferDataBase("NamesData.txt");
     
+    
+    NameSurferDataBase db("NamesData.txt"); 
     
     
     //Menu
@@ -41,12 +42,12 @@ int main(){
             
             cout << "Enter a year:";
             cin >> year;
-            enterYear(year);
+            enterYear(year, db);
             
         } else if (selection == 1){
             cout << "Enter in a name:";
             cin >> name;
-            searchName(name);
+            searchName(name, db);
         }
         
         name = "";
@@ -65,14 +66,18 @@ int main(){
 /**
  * Option 1 - Search name
  */
-void searchName(string name){
-//     findEntry(name);
+void searchName(string name, NameSurferDataBase &database){
+    
+    
+      database.findEntry(name);
+    
+    
     
 }
 /**
  * Option 2 - compare by year
  */
-void enterYear(int year){
+void enterYear(int year, NameSurferDataBase &database){
     
 }
 

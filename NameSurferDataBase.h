@@ -17,7 +17,6 @@ using namespace std;
 class NameSurferDataBase {
 
 public:
-
     NameSurferDataBase(string filename);
 
     NameSurferEntry findEntry(string name);

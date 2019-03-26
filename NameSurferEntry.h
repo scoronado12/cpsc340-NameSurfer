@@ -23,7 +23,7 @@ public:
     bool operator> (NameSurferEntry left);
     bool operator<= (NameSurferEntry left);
     friend bool operator>= (NameSurferEntry left, NameSurferEntry right);
-    bool operator!= (NameSurferEntry left);
+    friend bool operator!= (NameSurferEntry left, NameSurferEntry right);
     bool operator== (NameSurferEntry left);
     
     NameSurferEntry();

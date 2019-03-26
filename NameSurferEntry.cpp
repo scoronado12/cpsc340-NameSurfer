@@ -97,6 +97,10 @@ bool operator < (NameSurferEntry left, NameSurferEntry right){
     return left.getName() < right.getName();
 }
 
+bool operator!= (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() != right.getName();
+}
+
 /**
  * Overloading ostream out to be able to print Linked List
  */
