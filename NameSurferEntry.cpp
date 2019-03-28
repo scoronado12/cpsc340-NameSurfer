@@ -38,7 +38,7 @@ NameSurferEntry::NameSurferEntry(string line){
     this-> name = lineVals[0]; //NOTICE This declares the name in the object
     for (int i = 1; i <= 12; i++){
          //cout << "Inserting: "<< lineVals[0] << " " << lineVals[i] << endl;
-        rank.push_back(stoi(lineVals[i])); //TODO insert array into vector
+        rank.push_back(stoi(lineVals[i])); // insert array into vector
     }
     
 }
@@ -52,8 +52,7 @@ string NameSurferEntry::getName(){
 }
 
 int NameSurferEntry::getRank(int year){
-    //TODO get year from vector
-    
+    //TODO Maybe this is where I plop down my star graph?
     if (year >= 1900 && year <= 1909){
         return rank.at(0);
     } else if (year >= 1910 && year <= 1919){
