@@ -28,7 +28,6 @@ NameSurferEntry::NameSurferEntry(string line){
     string lineVals[13];
     
     stringstream LineIn(line);
-//     int i = 0;
     
     for (int i = 0; LineIn.good() && i <= 14; i++){
         LineIn >> lineVals[i];

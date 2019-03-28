@@ -41,9 +41,9 @@ NameSurferDataBase::NameSurferDataBase(string filename){
             
         }
         
-        //Debug statements
-        cout << "Print All" << endl;
-        database.PrintAll();
+        //Debug statements - commented out for less verboseness
+        //cout << "Print All" << endl;
+        //database.PrintAll();
         
         inputfile.close();
     }
