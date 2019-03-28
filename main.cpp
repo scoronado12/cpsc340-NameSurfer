@@ -69,7 +69,10 @@ int main(){
 void searchName(string name, NameSurferDataBase &database){
     //TODO, turn SAM or sAM, etc to Sam
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
-    name.at(0).toupper(); //make first char uppercase
+    name.at(0) = toupper(name.at(0)); //make first char uppercase
+    
+    cout << name << endl;
+    exit(0);
     
 //       database.findEntry(name);
     
