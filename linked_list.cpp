@@ -193,6 +193,7 @@ bool linked_list<NODETYPE>::Search(NODETYPE& value) {
         return false;
     } else { //else
         //return true
+        value = current -> data;
         return true;
     }
      return false;
