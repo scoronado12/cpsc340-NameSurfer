@@ -50,7 +50,6 @@ int main(){
         } else {
             cout << "Please enter a choice " << endl;
         }
-        cin.ignore();
         
         name = "";
         year = 0;
