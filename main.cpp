@@ -61,14 +61,13 @@ int main(){
     return 0;
 }
 
-//TODO find way to interract with NameSurferDataBase from main.cpp
 
 
 /**
- * Option 1 - Search name
+ * Option 1 - Search name prints out relevant data about a given name
  */
 void searchName(string name, NameSurferDataBase &database){
-    //TODO, turn SAM or sAM, etc to Sam
+
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
     name.at(0) = toupper(name.at(0)); //make first char uppercase
     
@@ -79,6 +78,7 @@ void searchName(string name, NameSurferDataBase &database){
 }
 /**
  * Option 2 - compare by year
+ * TODO finish by Monday
  */
 void enterYear(int year, NameSurferDataBase &database){
     

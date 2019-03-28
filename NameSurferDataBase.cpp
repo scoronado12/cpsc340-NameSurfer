@@ -59,7 +59,7 @@ NameSurferDataBase::NameSurferDataBase(string filename){
 NameSurferEntry NameSurferDataBase::findEntry(string name){
      NameSurferEntry temp = NameSurferEntry(name + " 0 0 0 0 0 0 0 0 0 0 0 0");
 //     NameSurferEntry temp = NameSurferEntry().getName();
-    // TODO getName()
+    // TODO Fix problem with temp not takeing on the value from the node
      
     
     if(database.Search(temp)){
