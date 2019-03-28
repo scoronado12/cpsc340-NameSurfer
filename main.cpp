@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <strings.h>
+#include <algorithm>
 #include "linked_list.h"
 #include "NameSurferDataBase.h"
 
@@ -67,9 +67,11 @@ int main(){
  * Option 1 - Search name
  */
 void searchName(string name, NameSurferDataBase &database){
+    //TODO, turn SAM or sAM, etc to Sam
+    transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
+    name.at(0).toupper(); //make first char uppercase
     
-    
-      database.findEntry(name);
+//       database.findEntry(name);
     
     
     
