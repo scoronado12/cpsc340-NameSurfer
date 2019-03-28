@@ -73,10 +73,7 @@ void searchName(string name, NameSurferDataBase &database){
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
     name.at(0) = toupper(name.at(0)); //make first char uppercase
     
-    cout << name << endl;
-    
-    
-    database.findEntry(name);
+    cout << database.findEntry(name) << endl;
     
     
     

@@ -62,6 +62,7 @@ NameSurferEntry NameSurferDataBase::findEntry(string name){
     
     if(database.Search(temp)){
         cout << "Found it!" << endl;
+        cout << temp << endl;
     }
     
     return temp;
