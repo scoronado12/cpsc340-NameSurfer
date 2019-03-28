@@ -28,15 +28,15 @@ NameSurferEntry::NameSurferEntry(string line){
     string lineVals[13];
     
     stringstream LineIn(line);
-    int i = 0;
-    while (LineIn.good() && i <= 14){
+//     int i = 0;
+    
+    for (int i = 0; LineIn.good() && i <= 14; i++){
         LineIn >> lineVals[i];
-        cout << lineVals[i] << endl;
-        i++;
+        //commented out for less verboseness
+         //cout << lineVals[i] << endl;
     }
     LineIn.clear();
     this-> name = lineVals[0]; //NOTICE This declares the name in the object
-//     int j = 0;
     for (int i = 1; i <= 12; i++){
          //cout << "Inserting: "<< lineVals[0] << " " << lineVals[i] << endl;
         rank.push_back(stoi(lineVals[i])); //TODO insert array into vector
