@@ -48,6 +48,8 @@ int main(){
             cout << "Enter in a name:";
             cin >> name;
             searchName(name, db);
+        } else {
+            cout << "Please enter a choice " << endl;
         }
         
         name = "";
@@ -72,9 +74,9 @@ void searchName(string name, NameSurferDataBase &database){
     name.at(0) = toupper(name.at(0)); //make first char uppercase
     
     cout << name << endl;
-    exit(0);
     
-//       database.findEntry(name);
+    
+    database.findEntry(name);
     
     
     
