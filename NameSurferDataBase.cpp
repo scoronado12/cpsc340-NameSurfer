@@ -57,12 +57,16 @@ NameSurferDataBase::NameSurferDataBase(string filename){
   */
  
 NameSurferEntry NameSurferDataBase::findEntry(string name){
-    NameSurferEntry temp = NameSurferEntry(name + " 0 0 0 0 0 0 0 0 0 0 0 0");
+     NameSurferEntry temp = NameSurferEntry(name + " 0 0 0 0 0 0 0 0 0 0 0 0");
+//     NameSurferEntry temp = NameSurferEntry().getName();
     // TODO getName()
+     
     
     if(database.Search(temp)){
         cout << "Found it!" << endl;
-        cout << temp << endl;
+//         cout << temp << endl;
+    } else {
+        cout << "Not Found!" << endl;
     }
     
     return temp;

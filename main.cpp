@@ -17,7 +17,7 @@ void searchName(string name, NameSurferDataBase &database);
 void enterYear(int year, NameSurferDataBase &database);
 
 int main(){
-    int selection = 0;
+    string selection = "";
     int year = 0;
     string name = "";
     
@@ -26,8 +26,7 @@ int main(){
     
     
     //Menu
-    bool menuRun = true;
-    while (menuRun == true){
+    while (true){
         cout << "1:Enter a name to be searched." << endl;
         cout << "2:Enter a year" << endl;
         cout << "3:Exit\n" << "Enter a choice:";
@@ -35,26 +34,27 @@ int main(){
         
         cin >> selection;
         
-        if (selection == 3){
+        if (selection == "3"){
             exit(0);
             
-        } else if (selection == 2){
+        } else if (selection == "2"){
             
             cout << "Enter a year:";
             cin >> year;
             enterYear(year, db);
             
-        } else if (selection == 1){
+        } else if (selection == "1"){
             cout << "Enter in a name:";
             cin >> name;
             searchName(name, db);
         } else {
             cout << "Please enter a choice " << endl;
         }
+        cin.ignore();
         
         name = "";
         year = 0;
-        selection = 0;
+        selection = "";
         
         
     }

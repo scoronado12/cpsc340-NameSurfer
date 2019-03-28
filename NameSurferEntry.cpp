@@ -106,7 +106,7 @@ bool operator!= (NameSurferEntry left, NameSurferEntry right){
 ostream & operator << (ostream &out, NameSurferEntry temp){
     
     out << "Name: "<< temp.getName() << endl;
-    out << " Values: "<< temp.getRank(1900) << " " << temp.getRank(1910) << 
+    out << "Values: "<< temp.getRank(1900) << " " << temp.getRank(1910) << 
     " " << temp.getRank(1920) << " ";
     out << temp.getRank(1930) << " " << temp.getRank(1940) << " " << temp.getRank(1950) << " " <<  temp.getRank(1960);
     out << " " << temp.getRank(1970) << " " << temp.getRank(1980) << " " << temp.getRank(1990) << " ";
