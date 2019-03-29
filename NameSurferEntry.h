@@ -31,6 +31,7 @@ public:
     void setName(string name);
     string getName();
     int getRank(int year);
+    vector<int> getRankVec();
     bool empty();
 
 private:

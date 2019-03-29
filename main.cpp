@@ -33,6 +33,8 @@ int main(){
         
         
         cin >> selection;
+        // selection is a string to mitigate the while loop from igoring cin as a blocking call
+        
         
         if (selection == "3"){
             exit(0);
@@ -67,12 +69,28 @@ int main(){
  * Option 1 - Search name prints out relevant data about a given name
  */
 void searchName(string name, NameSurferDataBase &database){
-
+    
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
-    name.at(0) = toupper(name.at(0)); //make first char uppercase
+    name.at(0) = toupper(name.at(0)); //make first char uppercase if not already
     
     cout << database.findEntry(name) << endl;
+    NameSurferEntry nombre = database.findEntry(name);
     
+    vector<int> ranks = nombre.getRankVec();
+    int year = 1900;
+    
+    for (int i = 0; i < ranks.size(); i++){
+        cout << year;
+        // for every tenth iteration, one asterisk will be outputted
+        for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
+            cout << "*";
+        }
+        //complete the outputted string and endline
+        cout << "-" << ranks.at(i) << endl;
+        
+        //increment year by 10
+        year = year + 10;
+    }
     
     
 }

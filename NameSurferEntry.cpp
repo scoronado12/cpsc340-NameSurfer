@@ -20,7 +20,7 @@ using namespace std;
 
 NameSurferEntry::NameSurferEntry(){
     name = "Default";
-    //vector should be all zeros here
+    //vector should be empty here
 }
 
 NameSurferEntry::NameSurferEntry(string line){
@@ -50,6 +50,11 @@ void NameSurferEntry::setName(string name){
 string NameSurferEntry::getName(){
     return name;
 }
+
+vector<int> NameSurferEntry::getRankVec(){
+    return this -> rank;
+}
+
 
 int NameSurferEntry::getRank(int year){
     //TODO Maybe this is where I plop down my star graph?
