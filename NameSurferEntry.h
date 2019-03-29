@@ -25,7 +25,6 @@ public:
     friend bool operator>= (NameSurferEntry left, NameSurferEntry right);
     friend bool operator!= (NameSurferEntry left, NameSurferEntry right);
     bool operator== (NameSurferEntry left);
-    
     NameSurferEntry();
     NameSurferEntry(string line);
     void setName(string name);

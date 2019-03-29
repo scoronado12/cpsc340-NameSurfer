@@ -10,7 +10,7 @@ single_node.o: single_node.cpp
 	g++ -c single_node.cpp
 clean:
 	rm -f *.o *gch a.out
-idungoofed:
+idungoofed: # some shorthand to make again
 	make clean && make && ./a.out
 
 

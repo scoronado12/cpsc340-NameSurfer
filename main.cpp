@@ -7,21 +7,23 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "linked_list.h"
+#include <cmath>
 #include "NameSurferDataBase.h"
 
 using namespace std;
 
-
+/**
+ * Function Prototypes
+ */
 void searchName(string name, NameSurferDataBase &database);
-void enterYear(int year, NameSurferDataBase &database);
-
+void compYear(int year, int namesToComp ,NameSurferDataBase &database);
+void fixName(string &name);
 int main(){
     string selection = "";
-    int year = 0;
     string name = "";
+    int year;
     
-    
+    //initialize db that imports text file
     NameSurferDataBase db("NamesData.txt"); 
     
     
@@ -29,7 +31,7 @@ int main(){
     while (true){
         cout << "1:Enter a name to be searched." << endl;
         cout << "2:Enter a year" << endl;
-        cout << "3:Exit\n" << "Enter a choice:";
+        cout << "3:Exit" << endl << "Enter a choice:";
         
         
         cin >> selection;
@@ -37,13 +39,16 @@ int main(){
         
         
         if (selection == "3"){
-            exit(0);
+            break;
             
         } else if (selection == "2"){
-            
+            int namesToComp;
             cout << "Enter a year:";
             cin >> year;
-            enterYear(year, db);
+            
+            cout << "Enter how many Names you want to compare:";
+            cin >> namesToComp;
+            compYear(year, namesToComp ,db);
             
         } else if (selection == "1"){
             cout << "Enter in a name:";
@@ -51,6 +56,7 @@ int main(){
             searchName(name, db);
         } else {
             cout << "Please enter a choice " << endl;
+            exit(1);
         }
         
         name = "";
@@ -70,10 +76,8 @@ int main(){
  */
 void searchName(string name, NameSurferDataBase &database){
     
-    transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
-    name.at(0) = toupper(name.at(0)); //make first char uppercase if not already
+    fixName(name);
     
-    cout << database.findEntry(name) << endl;
     NameSurferEntry nombre = database.findEntry(name);
     
     vector<int> ranks = nombre.getRankVec();
@@ -92,13 +96,42 @@ void searchName(string name, NameSurferDataBase &database){
         year = year + 10;
     }
     
-    
 }
 /**
- * Option 2 - compare by year
+ * Option 2 - compare names by year
  * TODO finish by Monday
  */
-void enterYear(int year, NameSurferDataBase &database){
+void compYear(int year, int namesToComp, NameSurferDataBase &database){
+    //TODO round number down to the last tenth so 1969 becomes 1960 or 2016 becomes 2010
+    string names[namesToComp];
+    //Get the names
+    int displayCounter = 1;
+    for (int i = 0; i < namesToComp; i++){
+        
+        cout << "Enter name " << displayCounter << ":";
+        cin >> names[i];
+        fixName(names[i]);
+        displayCounter++;
+    }
+    
+    for (string s : names){
+        cout << s << "\t";
+        cout << endl;
+    }
+}
+    
+/** fixName(name)
+ *  helper function to correct the input of a name
+ */
+
+void fixName(string &name){
+    
+    transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
+    name.at(0) = toupper(name.at(0)); //make first char uppercase if not already
+    
     
 }
+    
+    
+
 
