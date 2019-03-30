@@ -93,19 +93,24 @@ void searchName(string name, NameSurferDataBase &database){
     vector<int> ranks = nombre.getRankVec();
     //NO! The year is not hardcoded here by any means
     int yearIterator = 1900;
-    cout << name << endl;
     
-    for (int i = 0; i < ranks.size(); i++){
-        cout << yearIterator;
-        // for every tenth iteration, one asterisk will be outputted
-        for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
-            cout << "*";
-        }
-        //complete the outputted string and endline
-        cout << "-" << ranks.at(i) << endl;
+    if (nombre != NameSurferEntry()){
+        cout << name << endl;
         
-        //increment year by 10
-        yearIterator = yearIterator + 10;
+        for (int i = 0; i < ranks.size(); i++){
+            cout << yearIterator;
+            // for every tenth iteration, one asterisk will be outputted
+            for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
+                cout << "*";
+            }
+            //complete the outputted string and endline
+            cout << "-" << ranks.at(i) << endl;
+            
+            //increment year by 10
+            yearIterator = yearIterator + 10;
+        }
+    } else {
+        cout << name << " Not Found" << endl;
     }
     
 }
