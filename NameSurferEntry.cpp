@@ -20,7 +20,8 @@ using namespace std;
 
 NameSurferEntry::NameSurferEntry(){
     name = "Default";
-    //vector should be empty here
+    
+    //vector is empty
 }
 
 NameSurferEntry::NameSurferEntry(string line){
@@ -37,7 +38,6 @@ NameSurferEntry::NameSurferEntry(string line){
     LineIn.clear();
     this-> name = lineVals[0]; //NOTICE This declares the name in the object
     for (int i = 1; i <= 12; i++){
-         //cout << "Inserting: "<< lineVals[0] << " " << lineVals[i] << endl;
         rank.push_back(stoi(lineVals[i])); // insert array into vector
     }
     
@@ -57,38 +57,34 @@ vector<int> NameSurferEntry::getRankVec(){
 
 
 int NameSurferEntry::getRank(int year){
-    //TODO Maybe this is where I plop down my star graph?
-    if (year >= 1900 && year <= 1909){
+    
+    if (year >= 1910 && year <= 1919){
         return rank.at(0);
-    } else if (year >= 1910 && year <= 1919){
-        return rank.at(1);
     } else if (year >= 1920 && year <= 1929){
-        return rank.at(2);
+        return rank.at(1);
     } else if (year >= 1930 && year <= 1939){
-        return rank.at(3);
+        return rank.at(2);
     } else if (year >= 1940 && year <= 1949){
-        return rank.at(4);
+        return rank.at(3);
     } else if (year >= 1950 && year <= 1959){
-        return rank.at(5);
+        return rank.at(4);
     } else if (year >= 1960 && year <= 1969){
-        return rank.at(6);
+        return rank.at(5);
     } else if (year >= 1970 && year <= 1979){
-        return rank.at(7);
+        return rank.at(6);
     } else if (year >= 1980 && year <= 1989){
-        return rank.at(8);
+        return rank.at(7);
     } else if (year >= 1990 && year <= 1999){
-        return rank.at(9);
+        return rank.at(8);
     } else if (year >= 2000 && year <= 2009){
-        return rank.at(10);
+        return rank.at(9);
     } else if (year >= 2010 && year <= 2019){
-        return rank.at(11);
+        return rank.at(10);
     } else {
         cout << "NOT FOUND" << endl;
         return 0;
     }
     
-    
-//     return rank;
 }
 
 //Overloading Operators to compare two different NameSurferEntries
@@ -105,16 +101,18 @@ bool operator!= (NameSurferEntry left, NameSurferEntry right){
 }
 
 /**
- * Overloading ostream out to be able to print Linked List
+ * Overloading ostream out to be able to print contents of a single node
  */
 ostream & operator << (ostream &out, NameSurferEntry temp){
     
     out << "Name: "<< temp.getName() << endl;
-    out << "Values: "<< temp.getRank(1900) << " " << temp.getRank(1910) << 
-    " " << temp.getRank(1920) << " ";
-    out << temp.getRank(1930) << " " << temp.getRank(1940) << " " << temp.getRank(1950) << " " <<  temp.getRank(1960);
-    out << " " << temp.getRank(1970) << " " << temp.getRank(1980) << " " << temp.getRank(1990) << " ";
-    out << temp.getRank(2000) << " " << temp.getRank(2010) << endl;
+    out << "Values: ";
+    
+    
+    for (int i = 1910; i <= 2010; i = i + 10){
+        out << i << ":" << temp.getRank(i) << endl;
+        
+    }
     
     return out;
 }
