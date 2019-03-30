@@ -11,6 +11,6 @@ single_node.o: single_node.cpp
 clean:
 	rm -f *.o *gch a.out
 idungoofed: # some shorthand to make again
-	make clean && make && ./a.out
+	make clean && make
 
 

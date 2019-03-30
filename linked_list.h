@@ -1,7 +1,8 @@
-/* *
+/**
  * @author Stefano C. Coronado (scoronado)
  * @since 2019-03-20
- * Linked_list.h*/
+ * Linked_list.h
+ */
 
 #ifndef linked_list_H
 #define linked_list_H
@@ -23,8 +24,8 @@ class linked_list{
         bool RemoveFront(NODETYPE & value);
         bool RemoveRear(NODETYPE & value);
 		bool Search(NODETYPE &value);
-		bool IsEmpty() const;
 		void PrintAll();
+		bool IsEmpty() const;
 	private:
 		ListNode<NODETYPE> *first;
 		ListNode<NODETYPE> *current;

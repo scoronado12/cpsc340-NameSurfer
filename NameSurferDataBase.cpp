@@ -15,6 +15,11 @@
 
 using namespace std;
 
+/** NameSurferDataBase()
+ * Declares the definition of the NameSurferDataBase object containing an object and linked_list
+ * @param filename - string containing the name of a file or path of a directory
+ */
+
 
 NameSurferDataBase::NameSurferDataBase(string filename){
     
@@ -50,22 +55,24 @@ NameSurferDataBase::NameSurferDataBase(string filename){
 
     
 }
- //TODO findEntry
  
  /**
   * findEntry() - returns a NameSurferEntry from the linked_list database
+  * @param name - the string of a person. This will only work well if input is 
+  * corrected before passing here
+  * @return temp - a NameSurferEntry value that will be returned by reference 
+  * if search finds the entry
   */
  
 NameSurferEntry NameSurferDataBase::findEntry(string name){
      NameSurferEntry temp = NameSurferEntry(name + " 0 0 0 0 0 0 0 0 0 0 0 0");
-//     NameSurferEntry temp = NameSurferEntry().getName();
-    // TODO Fix problem with temp not takeing on the value from the node
-     
     
+     //when true the database.Search() call will pass the temp variable by reference
     if(database.Search(temp)){
         return temp;
     }
-    
+        
+    //if it didn't work
      return NameSurferEntry(nullptr);
 }
 

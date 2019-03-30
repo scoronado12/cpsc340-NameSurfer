@@ -1,4 +1,4 @@
-/* *
+/**
  * @author Stefano C. Coronado (scoronado)
  * @since 2019-03-20
  * Linked_list.cpp */
@@ -10,12 +10,22 @@
 #include <string>
 using namespace std;
 
+
+/** linked_list()
+ * declares the linked list
+ */
+
 template <class NODETYPE>
 linked_list<NODETYPE>::linked_list() {
         first = NULL;
         current = NULL;
         last = NULL;
 }
+
+/**
+ *  ~linked_list())
+ *  Deconstructor
+ */
 
 template <class NODETYPE>
 linked_list<NODETYPE>::~linked_list() {
@@ -27,6 +37,12 @@ linked_list<NODETYPE>::~linked_list() {
         }
         current = last = first = NULL;
 }
+
+/** 
+ * linked_list() 
+ * copy constructor
+ */
+
 template <class NODETYPE>
 linked_list<NODETYPE>::linked_list(linked_list<NODETYPE> &originalList) {
     
@@ -40,9 +56,13 @@ linked_list<NODETYPE>::linked_list(linked_list<NODETYPE> &originalList) {
 }
 
 
+/** InsertInOrder
+ *  @param value - NODETYPE
+ *  Inserts the node of any ADT into the linked list
+ */
+
 template <class NODETYPE>
-bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value)
-{
+bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value){
     current = new ListNode<NODETYPE>;
     
     //Declare a new node
@@ -79,21 +99,15 @@ bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value)
     }
     return true;
     
-    
-    
-        //call either insertFront or insertRear
-    //else if the new node data is less than first data
-        //call insertFront
-    //else if the new node data is greater than last data
-        //call insertRear
-    //else
-        //set current to first
-        //use a while loop to set current to the node before where you want to insert the new node
-        //connect the new node next to current next
-        //connect current next to the new node
-    
-    //return true
 }
+
+/** InsertFront
+ *  @param value - NODETYPE
+ *  Inserts the node of any ADT into the front of linked list
+ *  @return bool - if it is possible
+ */
+
+
 template <class NODETYPE>
 bool linked_list<NODETYPE>::InsertFront(NODETYPE value) {
     
@@ -131,6 +145,13 @@ bool linked_list<NODETYPE>::InsertFront(NODETYPE value) {
     return true;
     
 }
+
+/** InsertRear
+ *  @param value - NODETYPE
+ *  Inserts the node of any ADT into the back of linked list
+ *  @return true - if it is possible
+ */
+
 template <class NODETYPE>
 bool linked_list<NODETYPE>::InsertRear(NODETYPE value) {
     //New a new node with current
@@ -154,21 +175,24 @@ bool linked_list<NODETYPE>::InsertRear(NODETYPE value) {
         }
     }
         
-        //if this is the first node in the linked list
-            //set first to current
-            //set last to current
-            //set current next to nullptr
-        //else
-            //set last next to current
-            //set current next to nullptr
-            //set last to current
     return true;
 }
+
+/**IsEmpty()
+ * Helper function to determine if the linked_list is empty
+ * @return bool - if first doesn't exist
+ */
 
 template <class NODETYPE>
 bool linked_list<NODETYPE>::IsEmpty() const {
         return (first == NULL);
 }
+
+
+/** Search
+ * @param value - of NODETYPE ADT passed by reference
+ * @return bool - if the corresponding node is found in the linked_list
+ */
 
 template <class NODETYPE>
 bool linked_list<NODETYPE>::Search(NODETYPE& value) {
@@ -187,7 +211,7 @@ bool linked_list<NODETYPE>::Search(NODETYPE& value) {
         }
     }
     
-            //if current equals null not found
+    //if current equals null not found
     if (current == nullptr){
         //return false
         return false;
@@ -199,18 +223,21 @@ bool linked_list<NODETYPE>::Search(NODETYPE& value) {
      return false;
 }
 
+/** PrintAll
+ *  Prints out the entire linked_list from start to finish
+ */
 
 template <class NODETYPE>
 void linked_list<NODETYPE>::PrintAll() {
     //if not empty
-        //set current to first
-        //use a while loop to check for not equal to nullptr
-            //print out data
-            //move current over
     if(!IsEmpty()){
+        //set current to first
         current = first;
+        //use a while loop to check for not equal to nullptr
         while (current != nullptr){
+            //print out data
             cout << current -> data << "\n";
+            //move current over
             current = current -> next;
         }
     }
@@ -306,32 +333,6 @@ bool linked_list<NODETYPE>::Remove(NODETYPE & value) {
     }
     return false;
     
-    //if the value equals the first data and it is the last node in the linked last
-    //set value to first data
-    //remove the node and set current last and first to nullptr
-    //else if the value equals the first data
-    //set value to first data
-    //set current to first
-    //move first to the next node
-    //delete current
-    //else if the value equals the last data
-    //set value to last data
-    //set current to first
-    //use a while loop to set current to one before last
-    //delete last
-    //set last to current
-    //set current next to nullptr
-    //else
-    //set current to first
-    //use a while loop to check for current does not equal null and current next data does not equal value
-    //if current equals null
-    //return false
-    //else
-    //set temp pointer the node you will be deleting
-    //set value to the temp data
-    //set current next to temp next
-    //delete temp
-    //return true
 }
 
 #endif

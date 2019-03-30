@@ -67,7 +67,9 @@ public:
     bool empty();
 
 private:
+    //vector containing the rank of the given year
     vector<int> rank;
+    //names in database
     string name;
 
 };

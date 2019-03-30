@@ -58,7 +58,7 @@ NameSurferEntry::NameSurferEntry(string line){
 
 
 /**
- * setName
+ * setName()
  * @param name - a string
  * Changes the name of a given object instance 
  */
@@ -68,7 +68,7 @@ void NameSurferEntry::setName(string name){
 }
 
 /**
- * getName
+ * getName())
  * @returns name - the name of a refernced object instance
  */
 
@@ -76,6 +76,12 @@ string NameSurferEntry::getName(){
     return this -> name;
 }
 
+/**
+ * getRank
+ * @param year - into
+ * for the year passed, the corresponding value in the vector will be returned
+ * @returns a number inside the rank vector
+ */
 
 
 int NameSurferEntry::getRank(int year){
@@ -142,11 +148,6 @@ bool operator != (NameSurferEntry left, NameSurferEntry right){
 
 bool operator == (NameSurferEntry left, NameSurferEntry right){
     return left.getName() == right.getName();
-}
-
-
-bool operator!= (NameSurferEntry left, NameSurferEntry right){
-    return left.getName() != right.getName();
 }
 
 /**

@@ -78,6 +78,8 @@ int main(){
 
 /** searchName(string name, NameSurferDataBase &database)
  * Option 1 - Search name prints out relevant data about a given name
+ * @param name - can be of any format caps or not
+ * @param database - the NameSurferEntry object passed by reference just incase
  * @returns void
  */
 void searchName(string name, NameSurferDataBase &database){
@@ -106,6 +108,9 @@ void searchName(string name, NameSurferDataBase &database){
 }
 /**compYear(int year, int namesToComp, NameSurferDataBase &database)
  * Option 2 - compare names by year
+ * @param year - int
+ * @param namesToComp - how many names are we comparing
+ * @param database - again passeed by reference
  */
 void compYear(int year, int namesToComp, NameSurferDataBase &database){
     
@@ -130,7 +135,6 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
             cout << "*";
         }
-        
         cout << "-" << nameEntry.getRank(year) << endl;
         
     }
@@ -138,7 +142,7 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
     
 /** fixName(name)
  *  helper function to correct the input of a name
- *  name is passed by reference
+ *  @param name - passed by reference
  */
 
 void fixName(string &name){
