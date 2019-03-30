@@ -131,7 +131,8 @@ vector<int> NameSurferEntry::getRankVec(){
  */
 
 bool NameSurferEntry::empty(){
-    return rank.empty();
+    
+    return this -> rank.empty();
     
 }
 

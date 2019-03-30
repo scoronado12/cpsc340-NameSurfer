@@ -92,6 +92,9 @@ void searchName(string name, NameSurferDataBase &database){
     
     vector<int> ranks = nombre.getRankVec();
     //NO! The year is not hardcoded here by any means
+    
+    nombre.empty();
+    
     int yearIterator = 1900;
     
     if (nombre != NameSurferEntry()){
