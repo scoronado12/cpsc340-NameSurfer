@@ -13,4 +13,5 @@ clean:
 idungoofed: # some shorthand to make again
 	make clean && make
 
-
+gtest:
+	g++ -g test.cpp single_node.o linked_list.o NameSurferDataBase.o NameSurferEntry.o -lgtest -o gtest
