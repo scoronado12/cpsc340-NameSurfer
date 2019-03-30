@@ -57,13 +57,24 @@ public:
     */
     string getName();
     
+    /**getRank
+     * @param year - int
+     * @return rank of the given param
+     */
+    
+    int getRank(int year);
+    
     /**
     * getRankVec - helper function
     * @return rank - helps make the vector accessible outside the class
     */
     
-    int getRank(int year);
     vector<int> getRankVec();
+    
+    /** empty
+     *  @return
+     */
+    
     bool empty();
 
 private:

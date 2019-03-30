@@ -126,6 +126,17 @@ vector<int> NameSurferEntry::getRankVec(){
     return this -> rank;
 }
 
+/** empty
+ * @return true if the rank vector is empty
+ */
+
+bool NameSurferEntry::empty(){
+    return rank.empty();
+    
+}
+
+
+
 //Overloading Operators to compare two different NameSurferEntries
 
 bool operator < (NameSurferEntry left, NameSurferEntry right){
