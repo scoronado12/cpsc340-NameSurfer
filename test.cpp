@@ -7,7 +7,7 @@
 
 using namespace std;
 
-TEST(NSE, GET_RANK){
+TEST(neno_mimir_test, getRank){
 
 
 	NameSurferDataBase db("NamesData.txt");
@@ -19,7 +19,7 @@ TEST(NSE, GET_RANK){
 
 
 }
-TEST(NSE, FIND_ENTRY){
+TEST(neno_mimir_test, findEntry){
 
 	NameSurferDataBase db("NamesData.txt");
 
@@ -32,7 +32,7 @@ TEST(NSE, FIND_ENTRY){
 
 }
 
-TEST(NSE, NOT_FOUND_ENTRY){
+TEST(neno_mimir_test, Not_Found_Entry){
 	
 	NameSurferDataBase db("NamesData.txt");
 
@@ -42,7 +42,7 @@ TEST(NSE, NOT_FOUND_ENTRY){
 	ASSERT_TRUE(temp.empty());
 }
 
-TEST(NSE, GET_RANK_ASHLEY){
+TEST(neno_mimir_test, getRank_ASHLEY){
 	NameSurferDataBase database("NamesData.txt");
 	
 	NameSurferEntry temp;
@@ -52,7 +52,7 @@ TEST(NSE, GET_RANK_ASHLEY){
 	ASSERT_EQ(temp.getRank(1990),1);
 
 }
-TEST(NSE, get_rank_Bobbye){
+TEST(neno_mimir_test, get_rank_Bobbye){
 	NameSurferDataBase database("NamesData.txt");
 	
 	NameSurferEntry temp;
@@ -62,6 +62,7 @@ TEST(NSE, get_rank_Bobbye){
 	ASSERT_EQ(temp.getRank(1930),687);
 
 }
+
 int main (int argc, char** argv){
 
 	::testing ::InitGoogleTest(&argc, argv);
