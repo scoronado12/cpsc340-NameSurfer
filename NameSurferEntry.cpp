@@ -86,9 +86,11 @@ string NameSurferEntry::getName(){
 
 int NameSurferEntry::getRank(int year){
     
-    if (year >= 1910 && year <= 1919){
+    if (year >= 1900 && year <= 1919){
+        cout << "You selected the decade 1900" << endl;
         return rank.at(0);
     } else if (year >= 1920 && year <= 1929){
+        
         return rank.at(1);
     } else if (year >= 1930 && year <= 1939){
         return rank.at(2);
