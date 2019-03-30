@@ -86,30 +86,31 @@ string NameSurferEntry::getName(){
 
 int NameSurferEntry::getRank(int year){
     
-    if (year >= 1900 && year <= 1919){
+    if (year >= 1900 && year <= 1909){
         cout << "You selected the decade 1900" << endl;
         return rank.at(0);
-    } else if (year >= 1920 && year <= 1929){
-        
+    } else if (year >= 1910 && year <= 1919){ 
         return rank.at(1);
-    } else if (year >= 1930 && year <= 1939){
+    } else if (year >= 1920 && year <= 1929){
         return rank.at(2);
-    } else if (year >= 1940 && year <= 1949){
+    } else if (year >= 1930 && year <= 1939){
         return rank.at(3);
-    } else if (year >= 1950 && year <= 1959){
+    } else if (year >= 1940 && year <= 1949){
         return rank.at(4);
-    } else if (year >= 1960 && year <= 1969){
+    } else if (year >= 1950 && year <= 1959){
         return rank.at(5);
-    } else if (year >= 1970 && year <= 1979){
+    } else if (year >= 1960 && year <= 1969){
         return rank.at(6);
-    } else if (year >= 1980 && year <= 1989){
+    } else if (year >= 1970 && year <= 1979){
         return rank.at(7);
-    } else if (year >= 1990 && year <= 1999){
+    } else if (year >= 1980 && year <= 1989){
         return rank.at(8);
-    } else if (year >= 2000 && year <= 2009){
+    } else if (year >= 1990 && year <= 1999){
         return rank.at(9);
-    } else if (year >= 2010 && year <= 2019){
+    } else if (year >= 2000 && year <= 2009){
         return rank.at(10);
+    } else if (year >= 2010 && year <= 2010){
+	return rank.at(11);
     } else {
         cout << "NOT FOUND" << endl;
         return 0;

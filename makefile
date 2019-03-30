@@ -9,7 +9,7 @@ linked_list.o: linked_list.cpp
 single_node.o: single_node.cpp
 	g++ -c single_node.cpp
 clean:
-	rm -f *.o *gch vgcore.* a.out
+	rm -f *.o *gch vgcore.* a.out tests
 idungoofed: # some shorthand to make again
 	make clean && make
 
