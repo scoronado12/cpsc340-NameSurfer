@@ -34,7 +34,7 @@ int main(){
     
     //Menu
     while (true){
-        cout << "1:Enter a name to be searched." << endl;
+        cout << endl <<"1:Enter a name to be searched." << endl;
         cout << "2:Enter a year" << endl;
         cout << "3:Exit" << endl << "Enter a choice:";
         
@@ -91,6 +91,8 @@ void searchName(string name, NameSurferDataBase &database){
     vector<int> ranks = nombre.getRankVec();
     //NO! The year is not hardcoded here by any means
     int yearIterator = 1900;
+    
+    cout << name << endl;
     
     for (int i = 0; i < ranks.size(); i++){
         cout << yearIterator;

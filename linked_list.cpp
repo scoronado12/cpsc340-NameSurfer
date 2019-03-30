@@ -246,6 +246,12 @@ void linked_list<NODETYPE>::PrintAll() {
 
 }
 
+/** RemoveFront
+ *  @param value - passed by reference
+ *  Removes node at the front of the linked_list
+ *  @return bool - depends on if it is done
+ */
+
 template <class NODETYPE>
 bool linked_list<NODETYPE>::RemoveFront(NODETYPE & value) {
     //TODO Debug
@@ -263,8 +269,13 @@ bool linked_list<NODETYPE>::RemoveFront(NODETYPE & value) {
     }
     
     return false;
-    
 }
+
+/** RemoveRear
+ *  @param value - passed by reference
+ *  Removes node at the rear of the linked_list
+ *  @return bool - depends on if it is done
+ */
 template <class NODETYPE>
 bool linked_list<NODETYPE>::RemoveRear(NODETYPE & value) {
 
@@ -287,8 +298,14 @@ bool linked_list<NODETYPE>::RemoveRear(NODETYPE & value) {
     }
     
     return false;
-    
 }
+
+/** Remove
+ *  @param value - passed by reference
+ *  Removes node at the in the linked list depending on where it is
+ *  @return bool - depends on if it is done
+ */
+
 template <class NODETYPE>
 bool linked_list<NODETYPE>::Remove(NODETYPE & value) {
     
