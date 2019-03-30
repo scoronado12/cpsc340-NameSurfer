@@ -15,20 +15,53 @@
 using namespace std;
 
 class NameSurferEntry {
-
+    
+    
+    /**
+    * Overloading ostream out to be able to print contents of a single node
+    */
     friend ostream & operator<<(ostream &out, NameSurferEntry temp);
 
 public:
+    
+    //Overloading Operators to compare two different NameSurferEntries    
     friend bool operator< (NameSurferEntry left, NameSurferEntry right);
-    bool operator> (NameSurferEntry left);
-    bool operator<= (NameSurferEntry left);
+    friend bool operator> (NameSurferEntry left, NameSurferEntry right);
+    friend bool operator<= (NameSurferEntry left, NameSurferEntry right);
     friend bool operator>= (NameSurferEntry left, NameSurferEntry right);
     friend bool operator!= (NameSurferEntry left, NameSurferEntry right);
-    bool operator== (NameSurferEntry left);
+    friend bool operator== (NameSurferEntry left, NameSurferEntry right);
+    /**
+    * NameSurferEntry() - default constructor
+    * Initializes a name called "Default"
+    * Vector will be empty
+    */
     NameSurferEntry();
+    
+    /**
+    * NameSurferEntry
+    * @param line - from a text file
+    * Text lines pumped in here become one of many NSE objects.
+    */
     NameSurferEntry(string line);
+    /**
+     * setName
+     * @param name - a string
+     * Changes the name of a given object instance 
+     */
     void setName(string name);
+    
+    /**
+    * getName
+    * @returns name - the name of a refernced object instance
+    */
     string getName();
+    
+    /**
+    * getRankVec - helper function
+    * @return rank - helps make the vector accessible outside the class
+    */
+    
     int getRank(int year);
     vector<int> getRankVec();
     bool empty();

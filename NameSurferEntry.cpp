@@ -18,11 +18,23 @@
 
 using namespace std;
 
+/**
+ * NameSurferEntry() - default constructor
+ * Initializes a name called "Default"
+ * Vector will be empty
+ */
+
 NameSurferEntry::NameSurferEntry(){
-    name = "Default";
+    this -> name = "Default";
     
     //vector is empty
 }
+
+/**
+ * NameSurferEntry
+ * @param line - from a text file
+ * Text lines pumped in here become one of many NSE objects.
+ */
 
 NameSurferEntry::NameSurferEntry(string line){
     //play with string
@@ -35,25 +47,35 @@ NameSurferEntry::NameSurferEntry(string line){
         //commented out for less verboseness
          //cout << lineVals[i] << endl;
     }
+    //clear LineIn so there's no wierdness going on later down the line
     LineIn.clear();
-    this-> name = lineVals[0]; //NOTICE This declares the name in the object
+    this-> name = lineVals[0]; //This declares the name in the object
     for (int i = 1; i <= 12; i++){
         rank.push_back(stoi(lineVals[i])); // insert array into vector
     }
     
 }
 
+
+/**
+ * setName
+ * @param name - a string
+ * Changes the name of a given object instance 
+ */
+
 void NameSurferEntry::setName(string name){
     this -> name = name;
 }
 
+/**
+ * getName
+ * @returns name - the name of a refernced object instance
+ */
+
 string NameSurferEntry::getName(){
-    return name;
+    return this -> name;
 }
 
-vector<int> NameSurferEntry::getRankVec(){
-    return this -> rank;
-}
 
 
 int NameSurferEntry::getRank(int year){
@@ -87,14 +109,41 @@ int NameSurferEntry::getRank(int year){
     
 }
 
-//Overloading Operators to compare two different NameSurferEntries
-bool operator >= (NameSurferEntry left, NameSurferEntry right){
-    return left.getName() >= right.getName();
+/**
+ * getRankVec - helper function
+ * @return rank - helps make the vector accessible outside the class
+ */
+
+vector<int> NameSurferEntry::getRankVec(){
+    return this -> rank;
 }
+
+//Overloading Operators to compare two different NameSurferEntries
 
 bool operator < (NameSurferEntry left, NameSurferEntry right){
     return left.getName() < right.getName();
 }
+
+bool operator > (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() > right.getName();
+}
+
+bool operator <= (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() <= right.getName();
+}
+
+bool operator >= (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() >= right.getName();
+}
+
+bool operator != (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() != right.getName();
+}
+
+bool operator == (NameSurferEntry left, NameSurferEntry right){
+    return left.getName() == right.getName();
+}
+
 
 bool operator!= (NameSurferEntry left, NameSurferEntry right){
     return left.getName() != right.getName();

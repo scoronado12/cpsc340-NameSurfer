@@ -7,7 +7,6 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <cmath>
 #include "NameSurferDataBase.h"
 
 using namespace std;
@@ -18,6 +17,12 @@ using namespace std;
 void searchName(string name, NameSurferDataBase &database);
 void compYear(int year, int namesToComp ,NameSurferDataBase &database);
 void fixName(string &name);
+
+
+/**
+ * Main function, contains the main menu
+ */
+
 int main(){
     string selection = "";
     string name = "";
@@ -101,10 +106,9 @@ void searchName(string name, NameSurferDataBase &database){
 }
 /**compYear(int year, int namesToComp, NameSurferDataBase &database)
  * Option 2 - compare names by year
- * TODO finish by Monday
  */
 void compYear(int year, int namesToComp, NameSurferDataBase &database){
-    //TODO round number down to the last tenth so 1969 becomes 1960 or 2016 becomes 2010
+    
     string names[namesToComp];
     //Get the names
     int displayCounter = 1;
@@ -135,7 +139,6 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
 /** fixName(name)
  *  helper function to correct the input of a name
  *  name is passed by reference
- *  @returns void
  */
 
 void fixName(string &name){
