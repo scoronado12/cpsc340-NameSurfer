@@ -70,10 +70,14 @@ NameSurferEntry NameSurferDataBase::findEntry(string name){
      //when true the database.Search() call will pass the temp variable by reference
     if(database.Search(temp)){
         return temp;
+    } else {
+        
+        //if it didn't work
+        return NameSurferEntry();
     }
         
-    //if it didn't work
-     return NameSurferEntry(nullptr);
+    
+    
 }
 
 
