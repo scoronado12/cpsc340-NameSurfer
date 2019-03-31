@@ -49,9 +49,14 @@ NameSurferEntry::NameSurferEntry(string line){
     }
     //clear LineIn so there's no wierdness going on later down the line
     LineIn.clear();
-    this-> name = lineVals[0]; //This declares the name in the object
-    for (int i = 1; i <= 12; i++){
-        rank.push_back(stoi(lineVals[i])); // insert array into vector
+    
+    try{
+        this-> name = lineVals[0]; //This declares the name in the object
+        for (int i = 1; i <= 12; i++){
+            rank.push_back(stoi(lineVals[i])); // insert array into vector
+        }
+    } catch (const exception& e){
+        //nothing happens
     }
     
 }
