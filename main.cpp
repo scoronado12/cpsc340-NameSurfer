@@ -124,7 +124,6 @@ void searchName(string name, NameSurferDataBase &database){
  * @param database - again passeed by reference
  */
 void compYear(int year, int namesToComp, NameSurferDataBase &database){
-    
     string names[namesToComp];
     //Get the names
     int displayCounter = 1;
@@ -134,6 +133,8 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         fixName(names[i]);
         displayCounter++;
     }
+
+    cout << "You selected the decade " << year - year % 10 << endl;   	
     for (int i = 0 ; i < namesToComp; i++){
         
         //stick it into the nameEntry variable
@@ -141,7 +142,7 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         
         vector <int> ranks = nameEntry.getRankVec();
         
-        cout << names[i] << "\t";
+        cout << names[i] << " ";
         
         for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
             cout << "*";
