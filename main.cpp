@@ -103,7 +103,7 @@ void searchName(string name, NameSurferDataBase &database){
         for (int i = 0; i < ranks.size(); i++){
             cout << yearIterator;
             // for every tenth iteration, one asterisk will be outputted
-            for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
+            for (int j = 0 ; j <= ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
                 cout << "*";
             }
             //complete the outputted string and endline
@@ -133,8 +133,8 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         fixName(names[i]);
         displayCounter++;
     }
-
-    cout << "You selected the decade " << year - year % 10 << endl;   	
+    int yearRound = 10*(year/10);
+    cout << "You selected the decade " << yearRound << endl;   	
     for (int i = 0 ; i < namesToComp; i++){
         
         //stick it into the nameEntry variable
@@ -142,9 +142,10 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         
         vector <int> ranks = nameEntry.getRankVec();
         
-        cout << names[i] << " ";
+        cout << names[i] << "\t ";
         
         for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
+            
             cout << "*";
         }
         cout << "-" << nameEntry.getRank(year) << endl;
