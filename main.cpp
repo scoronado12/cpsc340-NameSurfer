@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <iomanip>
 #include "NameSurferDataBase.h"
 
 using namespace std;
@@ -67,10 +68,7 @@ int main(){
         name = "";
         year = 0;
         selection = "";
-        
-        
     }
-    
     return 0;
 }
 
@@ -134,7 +132,7 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         displayCounter++;
     }
     int yearRound = 10*(year/10);
-    cout << "You selected the decade " << yearRound << endl;   	
+    cout << "You selected the decade " << yearRound << endl;
     for (int i = 0 ; i < namesToComp; i++){
         
         //stick it into the nameEntry variable
@@ -142,7 +140,7 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         
         //vector <int> ranks = nameEntry.getRankVec();
         
-        cout << names[i] << "\t";
+        cout << names[i] << setw(16);
         //for every tenth iteration, put a star 
         for (int j = 0 ; j <= nameEntry.getRank(yearRound) - 10 && j % 10 == 0; j = j + 10){
             
