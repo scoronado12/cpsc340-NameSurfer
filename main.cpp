@@ -140,11 +140,11 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         //stick it into the nameEntry variable
         NameSurferEntry nameEntry = database.findEntry(names[i]);
         
-        vector <int> ranks = nameEntry.getRankVec();
+        //vector <int> ranks = nameEntry.getRankVec();
         
         cout << names[i] << "\t ";
-        
-        for (int j = 0 ; j < ranks.at(i) - 10 && j % 10 == 0; j = j + 10){
+        //for every tenth iteration, put a star 
+        for (int j = 0 ; j <= nameEntry.getRank(yearRound) - 10 && j % 10 == 0; j = j + 10){
             
             cout << "*";
         }
