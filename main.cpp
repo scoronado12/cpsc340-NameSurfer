@@ -44,7 +44,7 @@ int main(){
         
         
         if (selection == "3"){
-            break;
+            exit(0);
             
         } else if (selection == "2"){
             int namesToComp;
@@ -142,7 +142,7 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         
         //vector <int> ranks = nameEntry.getRankVec();
         
-        cout << names[i] << "\t ";
+        cout << names[i] << "\t";
         //for every tenth iteration, put a star 
         for (int j = 0 ; j <= nameEntry.getRank(yearRound) - 10 && j % 10 == 0; j = j + 10){
             
@@ -163,9 +163,5 @@ void fixName(string &name){
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
     name.at(0) = toupper(name.at(0)); //make first char uppercase if not already
     
-    
 }
     
-    
-
-
