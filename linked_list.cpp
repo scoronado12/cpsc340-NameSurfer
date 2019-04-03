@@ -79,6 +79,7 @@ bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value){
             InsertFront(value);
         } else if (value >= last -> data){
             //insert rear
+            
             InsertRear(value);
         } else if ( first -> data >= value){
             InsertFront(value);
@@ -90,10 +91,14 @@ bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value){
             }
             current -> next = temp -> next;
             temp -> next = current;
+            
              //last = last-> next;
         }
+        
+        
     }
     return true;
+    
 }
 
 /** InsertFront
@@ -105,21 +110,29 @@ bool linked_list<NODETYPE>::InsertInOrder(NODETYPE value){
 
 template <class NODETYPE>
 bool linked_list<NODETYPE>::InsertFront(NODETYPE value) {
+    
     //New a new node with current
     current = new ListNode<NODETYPE>;
+    
     //if current equal nullptr return false
     if (current == nullptr){
+    
         return false;
+    
     } else {
+        
+    //else
         //set current data to value
         current -> data = value;
+        
         if (first == nullptr){ //or should I be looking at current == first
+            
         //if this is the first node in the linked list
-            first = current;
-            last = current;
+            first = last = current;
             //set first to current
             //set last to current
             current->next = nullptr;
+            
             //set current next to nullptr
         } else {
         //else
@@ -130,6 +143,7 @@ bool linked_list<NODETYPE>::InsertFront(NODETYPE value) {
         }
     }
     return true;
+    
 }
 
 /** InsertRear
@@ -142,21 +156,25 @@ template <class NODETYPE>
 bool linked_list<NODETYPE>::InsertRear(NODETYPE value) {
     //New a new node with current
     current = new ListNode <NODETYPE>;
+    
     //if current equal nullptr return false
     if (current == nullptr){
         return false;
     } else {
         //set current data to value
         current -> data = value;
+        
         if (first == nullptr){
             InsertFront(value);
             return true;
+        
         } else {
             current -> next = nullptr;
             last -> next = current;
             last = current;
         }
     }
+        
     return true;
 }
 
@@ -178,17 +196,21 @@ bool linked_list<NODETYPE>::IsEmpty() const {
 
 template <class NODETYPE>
 bool linked_list<NODETYPE>::Search(NODETYPE& value) {
+    
     if (IsEmpty()){
         //if the list is empty return false
         return false;
     } else { //else
         //set current to first
         current = first;
+        
             //use a while loop to check not for nullptr and not for current data not equal to the value
         while (current != nullptr && current->data != value){
+            
             current = current -> next;
         }
     }
+    
     //if current equals null not found
     if (current == nullptr){
         //return false
@@ -219,6 +241,8 @@ void linked_list<NODETYPE>::PrintAll() {
             current = current -> next;
         }
     }
+    
+    
 
 }
 
@@ -243,6 +267,7 @@ bool linked_list<NODETYPE>::RemoveFront(NODETYPE & value) {
         first = current;
         return true;
     }
+    
     return false;
 }
 
@@ -254,6 +279,7 @@ bool linked_list<NODETYPE>::RemoveFront(NODETYPE & value) {
 template <class NODETYPE>
 bool linked_list<NODETYPE>::RemoveRear(NODETYPE & value) {
 
+    
     if (first -> data == value && first == last){
         value = first -> data;
         delete first;
@@ -270,6 +296,7 @@ bool linked_list<NODETYPE>::RemoveRear(NODETYPE & value) {
         last -> next = nullptr;
         return true;
     }
+    
     return false;
 }
 
@@ -281,7 +308,7 @@ bool linked_list<NODETYPE>::RemoveRear(NODETYPE & value) {
 
 template <class NODETYPE>
 bool linked_list<NODETYPE>::Remove(NODETYPE & value) {
- 
+    
     if (first->data == value && first == last){
         value = first -> data;
         delete first;
@@ -298,25 +325,31 @@ bool linked_list<NODETYPE>::Remove(NODETYPE & value) {
         while (current -> next != last){
             current = current -> next;
         }
+        
         value = last -> data;
         delete last;
         last = current;
         last -> next = nullptr;
         return true;
+        
     } else {
         current = first;
         while (current != nullptr && current -> next -> data != value){
             current = current -> next;
         }
         if (current != nullptr) {
+            
             value = current -> next -> data;
             ListNode <NODETYPE> *temp = current -> next;
             current -> next = temp -> next;
             delete temp;
             return true;
         }
+        
+        
     }
     return false;
+    
 }
 
 #endif
