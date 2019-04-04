@@ -116,7 +116,6 @@ int NameSurferEntry::getRank(int year){
     } else if (year >= 2010 && year <= 2010){
         return rank.at(11);
     } else {
-        cout << "NOT FOUND" << endl;
         return 0;
     }
     

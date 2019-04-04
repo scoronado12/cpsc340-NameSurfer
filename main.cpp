@@ -110,10 +110,10 @@ void searchName(string name, NameSurferDataBase &database){
             //increment year by 10
             yearIterator = yearIterator + 10;
         }
+        cout << endl;
     } else {
         cout << name << " Not Found" << endl;
     }
-    
 }
 /**compYear(int year, int namesToComp, NameSurferDataBase &database)
  * Option 2 - compare names by year
@@ -131,35 +131,27 @@ void compYear(int year, int namesToComp, NameSurferDataBase &database){
         fixName(names[i]);
         displayCounter++;
     }
+    cout << endl;
     int yearRound = 10*(year/10);
     cout << "You selected the decade " << yearRound << endl;
     for (int i = 0 ; i < namesToComp; i++){
-        
         //stick it into the nameEntry variable
         NameSurferEntry nameEntry = database.findEntry(names[i]);
-        
-        //vector <int> ranks = nameEntry.getRankVec();
-        
-        cout << names[i] << setw(16);
+        cout << names[i] << setw(16 - names[i].length());
         //for every tenth iteration, put a star 
         for (int j = 0 ; j <= nameEntry.getRank(yearRound) - 10 && j % 10 == 0; j = j + 10){
-            
             cout << "*";
         }
+        //complete the string and end with a newline
         cout << "-" << nameEntry.getRank(year) << endl;
-        
     }
 }
-    
 /** fixName(name)
  *  helper function to correct the input of a name
  *  @param name - passed by reference
  */
 
 void fixName(string &name){
-    
     transform(name.begin(), name.end(), name.begin(), ::tolower); //makes everything lowercase
     name.at(0) = toupper(name.at(0)); //make first char uppercase if not already
-    
 }
-    
